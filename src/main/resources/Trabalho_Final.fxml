@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controller.Controller">
+   <children>
+      <TabPane prefHeight="609.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="aba_Clientes" text="Clientes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tabela_Clientes" layoutY="290.0" prefHeight="280.0" prefWidth="750.0">
+                          <columns>
+                            <TableColumn fx:id="coluna_Documento" prefWidth="150.0" text="Documento" />
+                              <TableColumn fx:id="coluna_Nome" prefWidth="150.0" text="Nome" />
+                              <TableColumn fx:id="coluna_RG" prefWidth="150.0" text="RG" />
+                              <TableColumn fx:id="coluna_Email" prefWidth="150.0" text="Email" />
+                              <TableColumn fx:id="coluna_Telefone" prefWidth="150.0" text="Telefone" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="15.0" layoutY="15.0" text="Documento*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="documento" layoutX="15.0" layoutY="40.0" prefHeight="25.0" prefWidth="180.0" />
+                        <TextField fx:id="nome" layoutX="230.0" layoutY="40.0" prefHeight="25.0" prefWidth="500.0" />
+                        <TextField fx:id="rg" layoutX="15.0" layoutY="115.0" prefHeight="25.0" prefWidth="180.0" />
+                        <TextField fx:id="email" layoutX="230.0" layoutY="115.0" prefHeight="25.0" prefWidth="500.0" />
+                        <TextField fx:id="telefone" layoutX="15.0" layoutY="185.0" prefHeight="25.0" prefWidth="180.0" />
+                        <Label layoutX="230.0" layoutY="15.0" text="Nome*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="90.0" text="RG">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="230.0" layoutY="90.0" text="Email">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="160.0" text="Telefone">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnSalvarClientes" layoutX="230.0" layoutY="185.0" mnemonicParsing="false" onAction="#salvarCliente" text="Salvar" />
+                        <Button fx:id="btnExcluirClientes" layoutX="310.0" layoutY="185.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="aba_Enderecos" text="Endereços">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="15.0" text="Codigo Cliente*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font></Label>
+                        <TextField fx:id="codigoCliente" layoutX="15.0" layoutY="40.0" />
+                        <TextField fx:id="cep" layoutX="200.0" layoutY="40.0" />
+                        <TextField fx:id="estado" layoutX="15.0" layoutY="115.0" />
+                        <TextField fx:id="cidade" layoutX="200.0" layoutY="115.0" />
+                        <TextField fx:id="bairro" layoutX="385.0" layoutY="115.0" prefHeight="25.0" prefWidth="334.0" />
+                        <TextField fx:id="rua" layoutX="15.0" layoutY="185.0" prefHeight="25.0" prefWidth="335.0" />
+                        <TextField fx:id="numero" layoutX="385.0" layoutY="185.0" />
+                        <TableView fx:id="tabelaEnderecos" layoutY="290.0" prefHeight="280.0" prefWidth="750.0">
+                          <columns>
+                            <TableColumn fx:id="coluna_Codigo_Cliente" prefWidth="100.0" text="Codigo Cliente" />
+                              <TableColumn fx:id="coluna_Cep" prefWidth="100.0" text="CEP" />
+                              <TableColumn fx:id="coluna_Estado" prefWidth="100.0" text="Estado" />
+                              <TableColumn fx:id="coluna_Cidade" prefWidth="100.0" text="Cidade" />
+                              <TableColumn fx:id="coluna_Bairro" prefWidth="100.0" text="Bairro" />
+                              <TableColumn fx:id="coluna_Rua" prefWidth="100.0" text="Rua" />
+                              <TableColumn fx:id="coluna_Numero" prefWidth="100.0" text="nº" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="200.0" layoutY="15.0" text="CEP*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="90.0" text="Estado*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnSalvarEnderecos" layoutX="571.0" layoutY="185.0" mnemonicParsing="false" onAction="#salvarEndereco" text="Salvar" />
+                        <Button fx:id="btnExcluirEnderecos" layoutX="657.0" layoutY="185.0" mnemonicParsing="false" onAction="#excluirEndereco" text="Excluir" />
+                        <Label layoutX="200.0" layoutY="90.0" text="Cidade*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="385.0" layoutY="160.0" text="nº*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="160.0" text="Rua*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="385.0" layoutY="90.0" text="Bairro*">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

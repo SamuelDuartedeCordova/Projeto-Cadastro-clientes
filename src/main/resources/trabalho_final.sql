@@ -1,0 +1,26 @@
+CREATE TABLE clientes(
+	id SERIAL NOT NULL PRIMARY KEY,
+	documento VARCHAR NOT NULL,
+	nome VARCHAR(50) NOT NULL,
+	rg VARCHAR (9),
+	email VARCHAR,
+	telefone VARCHAR
+);
+
+CREATE TABLE enderecos(
+	id SERIAL NOT NULL PRIMARY KEY,
+	codigo_cliente VARCHAR NOT NULL,
+	cep VARCHAR(9) NOT NULL,
+	estado VARCHAR NOT NULL,
+	cidade VARCHAR NOT NULL,
+	bairro VARCHAR NOT NULL,
+	rua VARCHAR NOT NULL,
+	numero INTEGER NOT NULL,
+	id_cliente INTEGER NOT NULL,
+	FOREIGN KEY (id_cliente) 
+		REFERENCES clientes(id)
+);
+
+
+		
+	
